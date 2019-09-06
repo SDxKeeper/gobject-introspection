@@ -169,7 +169,7 @@ subdir('girepository')
 subdir('tools')
 subdir('giscanner')
 subdir('gir')
-subdir('examples')
+# subdir('examples')
 subdir('docs')
 # subdir('tests')
 
