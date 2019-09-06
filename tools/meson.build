@@ -53,6 +53,7 @@ gircompiler = executable('g-ir-compiler', 'compiler.c',
     girepo_internals_dep,
     girepo_dep,
   ],
+  build_rpath: join_paths(meson.build_root(), 'girepository'),
   install: true,
   c_args: custom_c_args,
 )
@@ -63,6 +64,7 @@ girgenerate = executable('g-ir-generate', 'generate.c',
     girepo_internals_dep,
     girepo_dep,
   ],
+  build_rpath: join_paths(meson.build_root(), 'girepository'),
   install: true,
   c_args: custom_c_args,
 )
@@ -71,6 +73,7 @@ meson.override_find_program('g-ir-generate', girgenerate)
 girinspect = executable('g-ir-inspect', 'g-ir-inspect.c',
   dependencies: girepo_dep,
   install: true,
+  build_rpath: join_paths(meson.build_root(), 'girepository'),
   c_args: custom_c_args,
 )
 meson.override_find_program('g-ir-inspect', girinspect)
